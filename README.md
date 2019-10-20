@@ -65,4 +65,5 @@ The method should return 4 in this case because 4 of these pairs match (2-2, 5-5
 Write a recursive method `fib` that accepts an integer index n as a parameter and returns the nth [fibonacci number](https://en.wikipedia.org/wiki/Fibonacci#Fibonacci_sequence).
 - e.g. fib(4) = (0 1 1 2 3) should return 3
 
+Try it with a large number (> 100), what do you notice happening?
 
