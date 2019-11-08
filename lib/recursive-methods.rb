@@ -12,22 +12,41 @@ def factorial(n)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n/2)
+# Space complexity: O(n/2), because you're chopping off two each time
 def reverse(s)
-  raise NotImplementedError, "Method not implemented"
+  if s.length == 0
+    return ""
+  elsif s.length == 1
+    return s
+  else
+    # last_char = s[-1]
+    # s = s.chop
+    # return last_char + reverse(s)
+    middle = s[1...-1]
+    return s[-1] + reverse(middle) + s[0]
+  end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse_inplace(s)
-  raise NotImplementedError, "Method not implemented"
+  if s.length > 0
+    last_char = s[-1]
+    s.chop!
+    reverse_inplace(s)
+    s.insert(0,last_char)
+  end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
-  raise NotImplementedError, "Method not implemented"
+  if n <= 0
+    return 0
+  else
+    return 2 + bunny(n-1)
+  end
 end
 
 # Time complexity: ?
