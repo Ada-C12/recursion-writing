@@ -260,7 +260,7 @@ describe "search" do
   end      
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -292,6 +292,17 @@ xdescribe "is_palindrome" do
     
     # Assert
     expect(answer).must_equal false
+  end
+  
+  it "will return true for an even-numbered palindrome" do
+    # Arrange
+    string = "raccar"
+    
+    # Act
+    answer = is_palindrome(string)
+    
+    # Assert
+    expect(answer).must_equal true
   end
 end
 
