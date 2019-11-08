@@ -65,10 +65,16 @@ def nested(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), where n is the number of items in the array
+# Space complexity: O(n)
 def search(array, value)
-  raise NotImplementedError, "Method not implemented"
+  if array.empty?
+    return false
+  elsif array.shift == value
+    return true
+  else
+    return search(array, value)
+  end
 end
 
 # Time complexity: ?
