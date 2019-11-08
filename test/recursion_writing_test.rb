@@ -210,7 +210,7 @@ describe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -295,7 +295,7 @@ xdescribe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891

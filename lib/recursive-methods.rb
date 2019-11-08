@@ -78,7 +78,15 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def search(array, value)
-  raise NotImplementedError, "Method not implemented"
+  if array.length == 0
+    return false
+  end
+  
+  if array.first == value
+    return true
+  else
+    search(array[1..-1], value)
+  end
 end
 
 # Time complexity: ?
@@ -90,5 +98,14 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def digit_match(n, m)
-  raise NotImplementedError, "Method not implemented"
+  n = n.to_s
+  m = m.to_s
+  
+  if n.length == 0 || m.length == 0
+    return 0
+  elsif n[-1] == m[-1]
+    1 + digit_match(n[0..-2], m[0..-2])
+  else
+    digit_match(n[0..-2], m[0..-2])
+  end
 end
