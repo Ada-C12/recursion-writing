@@ -55,8 +55,13 @@ def nested(s)
   if s.length == 0
     return true
   else
-    middle = s[1...-1]
-    return s[0] == "(" && s[-1] == ")" && nested(middle)
+    # middle = s[1...-1]
+    # return s[0] == "(" && s[-1] == ")" && nested(middle)
+    first_parens = (s[0] == "(")
+    last_parens = (s[-1] == ")")
+    s[0] = ''
+    s.chop!
+    return first_parens && last_parens && nested(s)
   end
 end
 
