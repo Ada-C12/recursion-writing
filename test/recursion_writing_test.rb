@@ -85,16 +85,16 @@ describe "reverse" do
 end
 
 
-xdescribe "reverse_in_place" do
+describe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
     
     # Act
-    answer = reverse_inplace(string)
+    reverse_inplace(string)
     
     # Assert
-    expect(answer).must_equal "tac"
+    expect(string).must_equal "tac"
   end
   
   it "will reverse 'a'" do
@@ -102,10 +102,10 @@ xdescribe "reverse_in_place" do
     string = "a"
     
     # Act
-    answer = reverse_inplace(string)
+    reverse_inplace(string)
     
     # Assert
-    expect(answer).must_equal "a"
+    expect(string).must_equal "a"
   end
   
   it "will reverse empty string " do
@@ -113,10 +113,10 @@ xdescribe "reverse_in_place" do
     string = ""
     
     # Act
-    answer = reverse_inplace(string)
+    reverse_inplace(string)
     
     # Assert
-    expect(answer).must_equal ""
+    expect(string).must_equal ""
   end
   
   it "will reverse 'apple'" do
@@ -124,10 +124,10 @@ xdescribe "reverse_in_place" do
     string = "apple"
     
     # Act
-    answer = reverse_inplace(string)
+    reverse_inplace(string)
     
     # Assert
-    expect(answer).must_equal "elppa"
+    expect(string).must_equal "elppa"
   end
 end
 

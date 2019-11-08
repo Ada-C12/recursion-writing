@@ -22,15 +22,17 @@ def reverse(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n). N is the length of the string.
+# Space complexity: O(n).  We need one stack frame for every character in the string.
 def reverse_inplace(s)
-  # def reverse(s)
-  #   if s.length == 1 || s.length == 0
-  #     return s
-  #   else
-  #   end
-  # end
+  if s.length == 1 || s.length == 0
+    return s
+  else
+    first_letter = s[0]
+    s[0] = ""
+    reverse_inplace(s)
+    s.insert(s.length, first_letter)
+  end
 end
 
 # Time complexity: O(n). N is the number of bunnies.
