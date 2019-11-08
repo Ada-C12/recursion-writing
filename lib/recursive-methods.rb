@@ -22,19 +22,26 @@ def reverse(s)
   end
 end
 
-
-
-
 # Time complexity: ?
 # Space complexity: ?
 def reverse_inplace(s)
-  # raise NotImplementedError, "Method not implemented"
+  # def reverse(s)
+  #   if s.length == 1 || s.length == 0
+  #     return s
+  #   else
+  #   end
+  # end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n). N is the number of bunnies.
+# Space complexity: O(n).  We need one stack frame for every bunny.
 def bunny(n)
-  # raise NotImplementedError, "Method not implemented"
+  return n if n == 0
+  if n == 1
+    return 2
+  else
+    return 2 + bunny(n - 1)
+  end
 end
 
 # Time complexity: ?
