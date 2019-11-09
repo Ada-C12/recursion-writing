@@ -42,17 +42,28 @@ def reverse_inplace(s, i = 0, j = -1)
   reverse_inplace(s, i, j)
 end
 
-# # Time complexity: ?
-# # Space complexity: ?
-# def bunny(n)
-#     raise NotImplementedError, "Method not implemented"
-# end
+# Time complexity: ? O(1)
+# Space complexity: ? O(1)
+def bunny(n)
+    # raise NotImplementedError, "Method not implemented"
+    return n + n
+end
 
 # # Time complexity: ?
 # # Space complexity: ?
-# def nested(s)
-#     raise NotImplementedError, "Method not implemented"
-# end
+def nested(s, i = 0, j = -1)
+  if s.length % 2 != 0
+    return false
+  elsif i == (s.length / 2)
+    return true
+  elsif !(s[i] == "(" && s[j] == ")") 
+    return false
+  end
+
+  i += 1
+  j -= 1
+  nested(s, i, j)
+end
 
 # # Time complexity: ?
 # # Space complexity: ?
