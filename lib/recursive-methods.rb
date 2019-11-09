@@ -1,7 +1,7 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
 # Time complexity: O(n) as n gets bigger, you make that many recursive calls
-# Space complexity: O(n) due to taking up space on the system stack
+# Space complexity: O(n) due to taking up space on the system call stack
 def factorial(n)
   return 1 if n == 0
 
@@ -21,7 +21,7 @@ def reverse(s)
 end
 
 # Time complexity: O(n) n is the length of the string s
-# Space complexity: O(n)
+# Space complexity: O(n) due to taking up space on the system call stack
 def reverse_inplace(s, left_indx = 0, right_indx = s.length - 1)
   return s if left_indx >= right_indx
   # multiple assignment where the left and right indexes switch positions in the string
@@ -92,8 +92,8 @@ end
 
 # Added fun fibonacci sequence
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n) as n gets bigger, you make that many recursive calls
+# Space complexity: O(n) due to taking up space on the system call stack
 def fib(n)
   # Base cases
   return 1 if n == 1 || n == 2
