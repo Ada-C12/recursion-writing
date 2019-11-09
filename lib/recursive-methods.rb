@@ -73,13 +73,21 @@ def search(array, value)
   return false
 end
 
-
-
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n). N is the length of the input string.
+# Space complexity: O(n).  We may need one stack frame for every pair of letters in the input string.
 def is_palindrome(s)
-  # raise NotImplementedError, "Method not implemented"
+  return true if s.length == 1 || s.length == 0
+  
+  if s[0] != s[-1]
+    return false
+  else
+    return is_palindrome(s[1...-1])
+  end
 end
+
+
+
+
 
 # Time complexity: ?
 # Space complexity: ?

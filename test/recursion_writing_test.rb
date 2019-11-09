@@ -261,15 +261,7 @@ describe "search" do
   end      
 end
 
-
-
-
-
-
-
-
-
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -303,6 +295,10 @@ xdescribe "is_palindrome" do
     expect(answer).must_equal false
   end
 end
+
+
+
+
 
 xdescribe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
