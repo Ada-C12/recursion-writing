@@ -49,8 +49,8 @@ def bunny(n)
     return n + n
 end
 
-# # Time complexity: ?
-# # Space complexity: ?
+# # Time complexity: O(n) where n is the length of s
+# # Space complexity: O(1) I am not creating a new data structure in memory
 def nested(s, i = 0, j = -1)
   if s.length % 2 != 0
     return false
@@ -65,14 +65,21 @@ def nested(s, i = 0, j = -1)
   nested(s, i, j)
 end
 
-# # Time complexity: ?
-# # Space complexity: ?
-# def search(array, value)
-#     raise NotImplementedError, "Method not implemented"
-# end
+# Time complexity: ?
+# Space complexity: ?
+def search(array, value)
+    if array.length == 0
+      return false
+    end
+    last = array.pop
+    if last == value
+      return true
+    end
+    search(array, value)
+end
 
-# # Time complexity: ?
-# # Space complexity: ?
+# Time complexity: ?
+# Space complexity: ?
 # def is_palindrome(s)
 #     raise NotImplementedError, "Method not implemented"
 # end
