@@ -354,3 +354,21 @@ describe "digit_match" do
     expect(answer).must_equal 1
   end
 end
+
+describe "fib" do
+  it "returns 3 when n is 4" do
+    num = 4
+
+    answer = fib(num)
+
+    expect(answer).must_equal 3
+  end
+
+  it "returns 0 when n is 0" do
+    num = 0
+
+    answer = fib(num)
+
+    expect(answer).must_equal 0
+  end
+end

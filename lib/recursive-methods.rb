@@ -24,6 +24,7 @@ end
 # Space complexity: O(n)
 def reverse_inplace(s, left_indx = 0, right_indx = s.length - 1)
   return s if left_indx >= right_indx
+  # multiple assignment where the left and right indexes switch positions in the string
   s[left_indx], s[right_indx] = s[right_indx], s[left_indx]
 
   return reverse_inplace(s, left_indx + 1, right_indx - 1)
@@ -69,8 +70,8 @@ def is_palindrome(s)
   return is_palindrome(s[1...-1])
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def digit_match(n, m)
   if n == m
     return 1
@@ -87,4 +88,16 @@ def digit_match(n, m)
     return digit_match(n / 10, m / 10) + 1
   end
   return digit_match(n / 10, m / 10)
+end
+
+# Added fun fibonacci sequence
+
+# Time complexity: O(n)
+# Space complexity: O(n)
+def fib(n)
+  # Base cases
+  return 1 if n == 1 || n == 2
+  return 0 if n == 0
+
+  return fib(n - 1) + fib(n - 2)
 end
