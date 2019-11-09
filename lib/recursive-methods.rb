@@ -65,8 +65,8 @@ def nested(s, i = 0, j = -1)
   nested(s, i, j)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) depends on the length of the array input 
+# Space complexity: O(1) no new array created in memory
 def search(array, value)
     if array.length == 0
       return false
@@ -80,9 +80,17 @@ end
 
 # Time complexity: ?
 # Space complexity: ?
-# def is_palindrome(s)
-#     raise NotImplementedError, "Method not implemented"
-# end
+def is_palindrome(s, i = 0, j = -1)
+  if i == (s.length / 2)
+    return true
+  elsif !(s[i] == s[j]) 
+    return false
+  end
+
+  i += 1
+  j -= 1
+  is_palindrome(s, i, j)
+end
 
 # # Time complexity: ?
 # # Space complexity: ?
