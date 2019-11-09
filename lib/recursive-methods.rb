@@ -39,6 +39,7 @@ end
 # Space complexity: O(n).  We need one stack frame for every bunny.
 def bunny(n)
   return n if n == 0
+  
   if n == 1
     return 2
   else
@@ -46,17 +47,33 @@ def bunny(n)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n). N is the length of the string.
+# Space complexity: O(n).  We need one stack frame for every comparison.
 def nested(s)
-  # raise NotImplementedError, "Method not implemented"
+  return true if s.length == 0
+  
+  if s[0] == s[-1]
+    return false
+  else
+    return nested(s[1..-2])
+  end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n). N is the number of elements in the array.
+# Space complexity: O(n).  We may need one stack frame for every element in the array.
 def search(array, value)
-  # raise NotImplementedError, "Method not implemented"
+  return false if array.length == 0
+  
+  if array[0] == value
+    return true
+  else
+    return search(array[1..-1], value)
+  end
+  
+  return false
 end
+
+
 
 # Time complexity: ?
 # Space complexity: ?

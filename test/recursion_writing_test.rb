@@ -84,7 +84,6 @@ describe "reverse" do
   end
 end
 
-
 describe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
@@ -166,8 +165,8 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
-  it "will return true for empystring" do
+describe "nested" do
+  it "will return true for emptystring" do
     # Arrange
     string = ""
     
@@ -212,7 +211,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -261,6 +260,14 @@ xdescribe "search" do
     expect(answer).must_equal true
   end      
 end
+
+
+
+
+
+
+
+
 
 xdescribe "is_palindrome" do
   it "will return true for emptystring" do
