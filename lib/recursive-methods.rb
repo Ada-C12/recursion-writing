@@ -13,20 +13,16 @@ def factorial(n)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse(s)
   # accepts a string and returns the reverse of the string by reversing all letters and all words in the string
   # ex: reverse("hello world") will convert the input string to "dlrow olleh"
-  
-  
-  # if s = ""
-  #   return
-  # else
-  #   return reverse(s[0..-1])
-  # end
-  
-  
+  if s.length <= 1
+    return s 
+  else
+    return s[-1] + reverse(s[1...-1]) + s[0]
+  end
   
 end
 
@@ -93,23 +89,23 @@ end
 # Space complexity: ?
 def digit_match(n, m)
   
-  if n[-1] && m[-1]
-    if n[-1] == m[-1]
-      if (n==0) || (m==0)
-        return 0
-      else
-        return 1+ digit_match(n%10, m%10) if n[-2] && m[-2]
-      end
-    else    
-      if (n==0) || (m==0)
-        return 0
-      else
-        return digit_match(n%10, m%10) if n[-2] && m[-2]
-      end
-    end
-  else
-    return 0
-  end
+  # if n[-1] && m[-1]
+  #   if n[-1] == m[-1]
+  #     if (n==0) || (m==0)
+  #       return 0
+  #     else
+  #       return 1+ digit_match(n%10, m%10) if n[-2] && m[-2]
+  #     end
+  #   else    
+  #     if (n==0) || (m==0)
+  #       return 0
+  #     else
+  #       return digit_match(n%10, m%10) if n[-2] && m[-2]
+  #     end
+  #   end
+  # else
+  #   return 0
+  # end
 end
 
 
