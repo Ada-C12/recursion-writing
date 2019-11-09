@@ -49,15 +49,53 @@ def bunny(n)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(1)
 def nested(s)
+  # puts "\nTESTING ON #{s}"
   
-  raise NotImplementedError, "Method not implemented"
+  # read from front until ( is found, return false if ) instead
+  i = 0
+  left_paren_found = false
+  while s[i] && left_paren_found==false
+    if s[i] == ")"
+      # puts "NOPE"
+      return false
+    elsif s[i] != "("
+      i += 1
+    else  
+      # puts "\tfound ( at index #{i}"
+      left_paren_found = true
+    end
+  end
+  
+  # read from back until ) is found, return false if ( instead
+  j = s.length-1
+  right_paren_found = false
+  while s[j] && right_paren_found==false
+    if s[j] == "("
+      # puts "BUSTED"
+      return false
+    elsif s[j] != ")"
+      j -= 1
+    else  
+      # puts "\tfound ) at index #{j}"
+      right_paren_found = true
+    end
+  end
+  
+  if (right_paren_found && left_paren_found) && (i < j)
+    # puts "recursion..."
+    return nested(s[i+1...j])
+  elsif !right_paren_found && !left_paren_found
+    return true
+  else
+    return false
+  end
 end
 
 # Time complexity: O(n)
-# Space complexity: O(1), b/c only 1 active stack
+# Space complexity: O(1)
 def search(array, value)
   # accepts an unsorted array of integers and an integer value to find and then 
   # returns true if the value if found in the unsorted array and false otherwise. 
@@ -74,7 +112,7 @@ def search(array, value)
 end
 
 # Time complexity: O(n)
-# Space complexity: O(1), b/c only 1 active stack
+# Space complexity: O(1)
 def is_palindrome(s)
   if (s.length == 0) || (s.length == 1)
     return true
