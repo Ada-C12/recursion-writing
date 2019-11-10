@@ -140,5 +140,4 @@ def digit_match(n, m)
     #   which was just checked for equality
     return count + digit_match(n[0...-1], m[0...-1])
   end
-  
 end
