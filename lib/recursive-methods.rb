@@ -51,7 +51,13 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def search(array, value)
-  raise NotImplementedError, "Method not implemented"
+  if array[0] != value
+    array.slice!(0)
+  end
+  return true if value == array[0]
+  return false if array.length <= 1
+  
+  search(array, value)
 end
 
 # Time complexity: ?
