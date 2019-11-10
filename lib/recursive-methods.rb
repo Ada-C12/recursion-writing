@@ -56,10 +56,11 @@ def is_palindrome(s)
 end
 
 # Time complexity: 0(m) - Where m is the length of the shortest of the two strings
-# Space complexity: 0(m) - Where m is the length of the shortest of the two strings
+# Space complexity: 0(m^2) - Where m is the length of the shortest of the two strings, and the additional array created by digits method
 def digit_match(n, m)
-  # return 1 if n == 0 && m == 0
+  return 1 if n == 0 && m == 0
   return 0 if n == 0 || m == 0
+  return 1 if n.digits[0] == 0 && m.digits[0] == 0
   return 0 + digit_match(n / 10, m / 10) if n % 10 != m % 10
   return 1 + digit_match(n / 10, m / 10) if n % 10 == m % 10
 end
