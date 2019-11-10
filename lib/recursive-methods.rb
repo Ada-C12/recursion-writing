@@ -85,12 +85,20 @@ def is_palindrome(s)
   end
 end
 
-
-
-
-
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n). N is the length of the smaller integer.
+# Space complexity: O(n).  We need one stack frame for every digit in the smaller integer.
 def digit_match(n, m)
-  # raise NotImplementedError, "Method not implemented"
+  n = n.to_s
+  m = m.to_s
+  
+  if n.length == 0 || m.length == 0
+    return 0
+  elsif !n[-1] || !m[-1]
+    return 0
+  elsif
+    n[-1] == m[-1]
+    return 1 + digit_match(n[0...-1], m[0...-1])
+  else
+    return 0 + digit_match(n[0...-1], m[0...-1])
+  end
 end
