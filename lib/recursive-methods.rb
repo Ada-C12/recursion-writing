@@ -30,16 +30,16 @@ def reverse_inplace(s, left_indx = 0, right_indx = s.length - 1)
   return reverse_inplace(s, left_indx + 1, right_indx - 1)
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n) n is the number of elements
+# Space complexity: O(n) taking up space on the system call stack depending on the size of n
 def bunny(n)
   return 0 if n == 0
 
   return 2 + bunny(n - 1)
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n) n is th length of the string s
+# Space complexity: O(n) dependent on the size of n (string)
 def nested(s, left = "(", right = ")")
   return true if s.empty?
   return false if s.count(left) != s.count(right)
