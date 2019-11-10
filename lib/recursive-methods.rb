@@ -3,49 +3,52 @@
 # Time complexity: O(n)
 # Space complexity: O(n)
 def factorial(n)
-    raise ArgumentError if n < 0
-    return 1 if n == 0
-    return n * factorial(n-1)
+  raise ArgumentError if n < 0
+  return 1 if n == 0
+  return n * factorial(n-1)
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+  return "" if s == ""
+  return s if s.size == 1
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+  return "" if s == ""
+  return s if s.size == 1
 end
 
 # Time complexity: ?
-# Space complexity: ?
+# Space complexity: O(n)
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+  return 0 if n == 0
+  return 2 + bunny(n-1)
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+  return true if s == ""
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+  raise NotImplementedError, "Method not implemented"
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+  raise NotImplementedError, "Method not implemented"
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+  raise NotImplementedError, "Method not implemented"
 end
