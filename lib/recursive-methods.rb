@@ -47,14 +47,24 @@ def search(array, value)
   search(array[1..-1], value)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+  return true if s.length <= 1
+  return false if s[0] != s[-1]
+  is_palindrome(s[1..-2])
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+  n = n.to_s
+  m = m.to_s
+  digit_match_private(n, m, 0)
+end
+
+def digit_match_private(n, m, count)
+  return count if n[-1] == nil || m[-1] == nil
+  count += 1 if n[-1] == m[-1]
+  digit_match_private(n[0..-2], m[0..-2], count)
 end
