@@ -15,16 +15,20 @@ def reverse(s)
   return s[(s.length - 1)] + reverse(s[0..(s.length - 2)])
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+  return s if s.length <= 1
+  return s[(s.length - 1)] + reverse(s[0..(s.length - 2)])
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
-    raise NotImplementedError, "Method not implemented"
+  return nil if n < 0
+  return 0 if n == 0
+  return 2 if n == 1
+  return 2 + bunny(n - 1)
 end
 
 # Time complexity: ?
