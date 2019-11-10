@@ -78,7 +78,20 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def is_palindrome(s)
-  raise NotImplementedError, "Method not implemented"
+  if s == ""
+    return true
+  end
+  if s[0] == s[-1]
+    s = s[1..-2] 
+  else
+    return false
+  end
+  
+  if s.length > 1
+    is_palindrome(s)
+  else 
+    return true
+  end
 end
 
 # Time complexity: ?
