@@ -32,8 +32,8 @@ def reverse_inplace(s)
   reversed_str += s[0]
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
   if n <= 0
     return 0
@@ -75,8 +75,8 @@ def search(array, value)
   search(array, value)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(1)
 def is_palindrome(s)
   if s == ""
     return true
@@ -94,8 +94,8 @@ def is_palindrome(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(1)
 def digit_match(n, m)
   x = 0
   if n.class == Integer 
