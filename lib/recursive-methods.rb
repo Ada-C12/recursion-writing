@@ -102,3 +102,15 @@ def digit_match(n, m)
     return 0 + digit_match(n[0...-1], m[0...-1])
   end
 end
+
+# Time complexity: O(n).  N is the input integer.
+# Space complexity: O(n). It needs one stack frame for every whole number less than the input number.
+def fib(n)
+  if n == 0
+    return 0
+  elsif n == 1
+    return 1
+  else
+    return fib(n - 1) + fib(n - 2)
+  end
+end

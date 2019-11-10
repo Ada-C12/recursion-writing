@@ -357,3 +357,29 @@ describe "digit_match" do
     expect(answer).must_equal 1
   end
 end
+
+describe "fibonacci" do
+  it "returns 3 for (4)" do
+    answer = fib(4)
+    
+    expect(answer).must_equal 3
+  end
+  
+  it "returns 0 for (0)" do
+    answer = fib(0)
+    
+    expect(answer).must_equal 0
+  end
+  
+  it "returns 1 for (1)" do
+    answer = fib(1)
+    
+    expect(answer).must_equal 1
+  end
+  
+  it "returns 8 for (6)" do
+    answer = fib(6)
+    
+    expect(answer).must_equal 8
+  end
+end
