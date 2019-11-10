@@ -42,30 +42,30 @@ def bunny(n)
   return (2 + bunny(n-1))
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(1)
 def nested(s)
+  if s == ""
+    return true
+  end
   if s.length % 2 != 0
     return false
   end
   if s[0] == "(" && s[-1] == ")"
     s.slice!(0)
     s.slice!(-1)
-    if s == ""
-      return true
-    end
-    search(s)
+    nested(s)
   else
     return false        
   end
 end
 
-def search(array, value)
-end
-
 # Time complexity: O(n)
 # Space complexity: O(1)
 def search(array, value)
+  if array == nil 
+    return false
+  end
   if array[0] != value
     array.slice!(0)
   end
@@ -84,5 +84,23 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def digit_match(n, m)
-  raise NotImplementedError, "Method not implemented"
+  x = 0
+  if n.class == Integer 
+    n = n.to_s.split('')
+  end
+  if m.class == Integer
+    m = m.to_s.split('')
+  end
+  
+  while n != [] || m != []
+    if m[-1] == n[-1]
+      x = 1
+    else
+      x = 0
+    end
+    m.pop
+    n.pop
+    return x + digit_match(n,m)
+  end
+  return 0
 end
