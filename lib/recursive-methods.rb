@@ -31,16 +31,20 @@ def bunny(n)
   return 2 + bunny(n - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def nested(s)
-    raise NotImplementedError, "Method not implemented"
+  return true if s.length == 0
+  return false if s[0] == s[-1]
+  nested(s[1..-2])
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+  return false if array.length == 0
+  return true if array[0] == value
+  search(array[1..-1], value)
 end
 
 # Time complexity: ?
