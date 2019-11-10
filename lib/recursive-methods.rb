@@ -31,6 +31,13 @@ end
 def reverse_inplace(s)
   #  accepts a string as a parameter and then reverses the string IN PLACE using a recursive algorithm.
   raise NotImplementedError, "Method not implemented"
+  
+  
+  
+  
+  
+  
+  
 end
 
 # Time complexity: O(n)
@@ -123,27 +130,29 @@ def is_palindrome(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), where n is the longer number
+# Space complexity: O(n)
 def digit_match(n, m)
+  # puts "digit_matching #{n} vs #{m}"
+  # puts "comparing #{n%10} vs #{m%10}"
   
-  # if n[-1] && m[-1]
-  #   if n[-1] == m[-1]
-  #     if (n==0) || (m==0)
-  #       return 0
-  #     else
-  #       return 1+ digit_match(n%10, m%10) if n[-2] && m[-2]
-  #     end
-  #   else    
-  #     if (n==0) || (m==0)
-  #       return 0
-  #     else
-  #       return digit_match(n%10, m%10) if n[-2] && m[-2]
-  #     end
-  #   end
-  # else
-  #   return 0
-  # end
+  if n>9 && m>9
+    # recurse-able condition
+    if n%10 == m%10
+      return 1 + digit_match(n/10,m/10)
+    else
+      return 0 + digit_match(n/10, m/10)
+    end
+    
+  else
+    # no need to recurse, n and/or m already on single digits
+    if n%10 == m%10
+      return 1
+    else
+      return 0
+    end
+  end
+  
 end
 
 

@@ -1,45 +1,26 @@
-def nested(s)
-  puts "\n TESTING ON #{s}"
-
-  # read from front until ( is found, return false if ) instead
-  i = 0
-  left_paren_found = false
-  while s[i] && left_paren_found==false
-    if s[i] == ")"
-      puts "HELL NO"
-      return false
-    elsif s[i] != "("
-      i += 1
-    else  
-      puts "\tfound ( at index #{i}"
-      left_paren_found = true
-    end
-  end
+def digit_match(n, m)
+  # puts "digit_matching #{n} vs #{m}"
+  # puts "comparing #{n%10} vs #{m%10}"
   
-  # read from back until ) is found, return false if ( instead
-  j = s.length-1
-  right_paren_found = false
-  while s[j] && right_paren_found==false
-    if s[j] == "("
-      puts "BUSTED"
-      return false
-    elsif s[j] != ")"
-      j -= 1
-    else  
-      puts "\tfound ) at index #{j}"
-      right_paren_found = true
+  if n>9 && m>9
+    # recurse-able condition
+    if n%10 == m%10
+      return 1 + digit_match(n/10,m/10)
+    else
+      return 0 + digit_match(n/10, m/10)
     end
-  end
-  
-  if (right_paren_found && left_paren_found) && (i < j)
-    puts "recursion..."
-    return nested(s[i+1...j])
-  elsif !right_paren_found && !left_paren_found
-    return true
+    
   else
-    return false
+    # no need to recurse, n and/or m already on single digits
+    if n%10 == m%10
+      return 1
+    else
+      return 0
+    end
   end
+  
 end
 
-s = "ab(c)d"
-p nested(s)
+n = 54321
+m = 12345
+p digit_match(n,m)
