@@ -45,11 +45,26 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def nested(s)
-  raise NotImplementedError, "Method not implemented"
+  if s.length % 2 != 0
+    return false
+  end
+  if s[0] == "(" && s[-1] == ")"
+    s.slice!(0)
+    s.slice!(-1)
+    if s == ""
+      return true
+    end
+    search(s)
+  else
+    return false        
+  end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+def search(array, value)
+end
+
+# Time complexity: O(n)
+# Space complexity: O(1)
 def search(array, value)
   if array[0] != value
     array.slice!(0)
