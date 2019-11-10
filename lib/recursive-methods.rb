@@ -8,10 +8,11 @@ def factorial(n)
   return n * factorial(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+  return s if s.length <= 1
+  return s[(s.length - 1)] + reverse(s[0..(s.length - 2)])
 end
 
 # Time complexity: ?
