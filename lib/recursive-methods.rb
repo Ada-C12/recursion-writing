@@ -84,12 +84,12 @@ end
 
 # Time complexity: O(n)
 # Space complexity: O(n) (stack space)
-def digit_match(n, m, count = 0)
+def digit_match(n, m, count = 0, first_run = true)
   raise ArgumentError if !n || !m
-  
-  return 1 if (n == 0) && (m == 0)
+
+  return 1 if n == 0 && m == 0 && first_run
   return count if (n == 0) || (m == 0)
-  
+
   count += 1 if (n % 10) == (m % 10)
-  return digit_match(n/10, m/10, count)
+  return digit_match(n/10, m/10, count, false)
 end

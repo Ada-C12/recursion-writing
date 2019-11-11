@@ -355,4 +355,28 @@ describe "digit_match" do
     # Assert
     expect(answer).must_equal 1
   end
+
+  it "returns 2 for (100, 200)" do
+    # Arrange
+    num1 = 100
+    num2 = 200
+    
+    # Act
+    answer = digit_match(num1, num2)
+    
+    # Assert
+    expect(answer).must_equal 2
+  end
+
+  it "returns 3 for 841 and 841" do
+    # Arrange
+    num1 = 841
+    num2 = 841
+    
+    # Act
+    answer = digit_match(num1, num2)
+    
+    # Assert
+    expect(answer).must_equal 3
+  end
 end
