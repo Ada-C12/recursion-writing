@@ -11,18 +11,20 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def reverse(s)
-  return "" if s == ""
-  return s if s.size == 1
+  return s if s.size <= 1
+  new_string = reverse(s[1..-1])
+  new_string += s[0]
+  return new_string
 end
 
 # Time complexity: ?
 # Space complexity: ?
 def reverse_inplace(s)
-  return "" if s == ""
-  return s if s.size == 1
+  return s if s.size <= 1
+  return reverse(s[1..-1]) + s[0]
 end
 
-# Time complexity: ?
+# Time complexity: O(n)
 # Space complexity: O(n)
 def bunny(n)
   return 0 if n == 0
@@ -33,6 +35,7 @@ end
 # Space complexity: ?
 def nested(s)
   return true if s == ""
+  return false if s.length.odd?
 end
 
 # Time complexity: ?
