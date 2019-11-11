@@ -1,17 +1,28 @@
-def fib(n)
-  # returns the nth fibonacci number
-  # e.g. fib(4) = (0 1 1 2 3) should return 3
-  # Try it with a large number (> 100), what do you notice happening?
-  # it got a lot slower as n increases, really noticeable around n=40
+def reverse_inplace(s)
+  #  accepts a string as a parameter and then reverses the string IN PLACE using a recursive algorithm.
   
-  if n == 0
-    return 0
-  elsif n == 1
-    return 1
-  else
-    # generate fib seq up to the n-th index place
-    return fib(n-1) + fib(n-2)
+  # helper method, which will be called as a recursive function
+  def swap(s, left_index, right_index)
+    temp = s[left_index] 
+    s[left_index] = s[right_index]
+    s[right_index] = temp
+    return s
   end
+  
+  left_index = 0
+  right_index = s.length - 1
+  
+  while left_index < right_index
+    s = swap(s, left_index, right_index)
+    left_index += 1
+    right_index -= 1
+  end
+  
+  return s
 end
 
+
+
+s = "super awesome"
+p reverse_inplace(s)
 
