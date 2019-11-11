@@ -33,14 +33,20 @@ def reverse_inplace(s)
     return s
   else 
     # recursive step
-    return s[-1] + reverse(s[1..-2]) + s[0]
+    return s[-1] + reverse_inplace(s[1..-2]) + s[0]
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O of n where n is the number of bunnies :)
+# Space complexity: O of n
 def bunny(n)
-  raise NotImplementedError, "Method not implemented"
+  if n == 0
+    return 0
+  elsif n == 1
+    return 2
+  else 
+    return 2 + bunny(n-1)
+  end
 end
 
 # Time complexity: ?
