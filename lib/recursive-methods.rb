@@ -78,14 +78,31 @@ def search(array, value, i = 0)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n), similar to the nested method
+# Space complexity: O(n), same
+def is_palindrome(s, i = 1)
+    if s[i-1] == s[-i] && i <= s.length/2
+      is_palindrome(s, i += 1)
+    elsif i > s.length/2
+      return true
+    else
+      return false
+    end
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n)
+# Space complexity: O(n)
+def digit_match(n, m, i = 0, result = 0)
+  dec = 10**i
+  if n == 0 && m == 0
+    return 1
+  end
+  if n - dec >= 0 && m - dec >= 0
+    if n/dec % 10 == m/dec % 10
+      result += 1
+    end
+    digit_match(n, m, i += 1, result)
+  else 
+    return result
+  end
 end
