@@ -38,7 +38,7 @@ describe "factorial" do
   end
 end
 
-xdescribe "reverse" do
+describe "reverse" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
