@@ -11,7 +11,7 @@ end
 # Time complexity: O(n)
 # Space complexity: O(n)
 def reverse(s)
-  return s if s.size <= 1
+  return s if s.length <= 1
   new_string = reverse(s[1..-1])
   new_string += s[0]
   return new_string
@@ -20,7 +20,7 @@ end
 # Time complexity: O(n)
 # Space complexity: O(n)
 def reverse_inplace(s)
-  return s if s.size <= 1
+  return s if s.length <= 1
   return reverse(s[1..-1]) + s[0]
 end
 
@@ -34,7 +34,7 @@ end
 # Time complexity: O(n)
 # Space complexity: O(n)
 def nested(s)
-  return true if s == ""
+  return true if s.empty?
   return false if s.length.odd?
   return false if s[0] == s[-1]
   nested(s[1..-2])
@@ -43,7 +43,9 @@ end
 # Time complexity: O(n)
 # Space complexity: O(n)
 def search(array, value)
-  raise NotImplementedError, "Method not implemented"
+  return false if array.empty?
+  return true if array[0] == value
+  search(array[1..-1], value)
 end
 
 # Time complexity: ?
@@ -52,7 +54,7 @@ def is_palindrome(s)
   return true if s.length <= 1
   return false if s.length.even?
   return true if s[0] == s[-1]
-  nested(s[1..-2])
+  is_palindrome(s[1..-2])
 end
 
 # Time complexity: ?
