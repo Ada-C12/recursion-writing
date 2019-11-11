@@ -36,6 +36,8 @@ end
 def nested(s)
   return true if s == ""
   return false if s.length.odd?
+  return false if s[0] == s[-1]
+  nested(s[1..-2])
 end
 
 # Time complexity: ?
