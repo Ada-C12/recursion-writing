@@ -3,7 +3,6 @@
 # Time complexity: O(n) where n is the integer given
 # Space complexity: O(n) because the number of times the function is called is 'n' times and placed on the stack
 def factorial(n)
-  # raise NotImplementedError, "Method not implemented"
   if n < 0
     raise ArgumentError
   elsif n == 0
@@ -16,7 +15,6 @@ end
 # Time complexity: O(n) where n is the length of string 's'
 # Space complexity: O(n) because the number of times the function reverse is called and placed on the stack
 def reverse(s)
-  # raise NotImplementedError, "Method not implemented"
   if s.length == 0
     return s
   else
@@ -28,7 +26,6 @@ end
 # Time complexity: O(n) where n the length of the string 's'
 # Space complexity: O(n) because of the number of functions called and placed on the stack regardless if reversed in place.
 def reverse_inplace(s)
-  # raise NotImplementedError, "Method not implemented"
   if s.length == 0 
     return s
   else
@@ -39,7 +36,6 @@ end
 # Time complexity: O(n), where n is the integer 'n'
 # Space complexity: O(n), because of the function stack everytime the function is called
 def bunny(n)
-  # raise NotImplementedError, "Method not implemented"
   if n <= 0
     return 0
   elsif n == 1
@@ -52,8 +48,6 @@ end
 # Time complexity: O(n) where n is the length of the string 's'
 # Space complexity: O(n) because of the function stack every time the function is called
 def nested(s)
-  # raise NotImplementedError, "Method not implemented"
-
   def nested_search(s,index,length)
     while index < length
       if s[index] == "(" && s[length] == ")"
@@ -76,7 +70,6 @@ end
 # Time complexity: O(n) where n is the length of array
 # Space complexity: O(n) because the function is called n-times and each time it is placed in the stack it is taking up space
 def search(array, value)
-  # raise NotImplementedError, "Method not implemented"
   def search_value(array,array_length,value,index)
     while index < array_length
       if array[index] == value
@@ -96,7 +89,6 @@ end
 # Time complexity: O(n) where n is the length of the string 'n'
 # Space complexity: O(n) because the function is called n-times and each time is placed on the stack
 def is_palindrome(s)
-  # raise NotImplementedError, "Method not implemented"
   def palindrome_find(s,s_length,index)
     while index < s.length
       if s[index] != s[s_length]
@@ -114,8 +106,29 @@ def is_palindrome(s)
   return palindrome_find(s,s.length-1,0)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) where n is the length of number of the least amount of digits
+# Space complexity: O(n) because the function is called n-times and each time the function call is added to the stack.
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+  if n < m
+    large_num = m.to_s
+    small_num = n.to_s
+  else
+    large_num = n.to_s
+    small_num = m.to_s
+  end
+
+  def find_matches(large_num,small_num,length,index,count)
+    while index < length
+      if large_num[-1] == small_num[-1]
+        count += 1
+        return find_matches(large_num[0..-2],small_num[0..-2],length,index+1,count)
+      else
+        return find_matches(large_num[0..-2],small_num[0..-2],length,index+1,count)
+      end
+    end
+
+    return count
+  end
+
+  return find_matches(large_num,small_num,small_num.length,0,0)
 end

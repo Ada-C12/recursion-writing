@@ -299,7 +299,7 @@ describe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
@@ -308,8 +308,8 @@ xdescribe "digit_match" do
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 4
+    # Assert
+    expect(answer).must_equal 4
   end
 
   it "returns 0 for nonmatching numbers" do
@@ -320,20 +320,20 @@ xdescribe "digit_match" do
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 0
+    # Assert
+    expect(answer).must_equal 0
   end
 
   it "returns 3 for 841 and 62530841" do
     # Arrange
     num1 = 841
     num2 = 62530841
-
+    
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 3
+    # Assert
+    expect(answer).must_equal 3
   end
   
   it "returns 1 for (0, 0)" do
@@ -344,8 +344,8 @@ xdescribe "digit_match" do
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 1
+    # Assert
+    expect(answer).must_equal 1
   end
   
   it "returns 1 for (10, 20)" do
@@ -356,7 +356,7 @@ xdescribe "digit_match" do
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 1
+    # Assert
+    expect(answer).must_equal 1
   end
 end
