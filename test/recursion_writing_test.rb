@@ -2,6 +2,10 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 require "minitest/skip_dsl"
 require_relative '../lib/recursive-methods'
+require 'pry'
+
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
 
 describe "factorial" do
   it "will find the factorial of 0" do
@@ -38,7 +42,7 @@ describe "factorial" do
   end
 end
 
-xdescribe "reverse" do
+describe "reverse" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
@@ -84,7 +88,7 @@ xdescribe "reverse" do
 end
 
 
-xdescribe "reverse_in_place" do
+describe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
@@ -129,7 +133,7 @@ xdescribe "reverse_in_place" do
   end
 end
 
-xdescribe "bunny" do
+describe "bunny" do
   it "returns 0 for 0 bunnies" do
     # Arrange
     count = 0
@@ -164,7 +168,7 @@ xdescribe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
@@ -210,7 +214,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -260,7 +264,7 @@ xdescribe "search" do
     end      
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -295,7 +299,7 @@ xdescribe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
+describe "digit_match" do
   it "returns 4 for 1072503891 and 62530841" do
     # Arrange
     num1 = 1072503891
@@ -304,8 +308,8 @@ xdescribe "digit_match" do
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 4
+    # Assert
+    expect(answer).must_equal 4
   end
 
   it "returns 0 for nonmatching numbers" do
@@ -316,20 +320,20 @@ xdescribe "digit_match" do
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 0
+    # Assert
+    expect(answer).must_equal 0
   end
 
   it "returns 3 for 841 and 62530841" do
     # Arrange
     num1 = 841
     num2 = 62530841
-
+    
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 3
+    # Assert
+    expect(answer).must_equal 3
   end
   
   it "returns 1 for (0, 0)" do
@@ -340,8 +344,8 @@ xdescribe "digit_match" do
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 1
+    # Assert
+    expect(answer).must_equal 1
   end
   
   it "returns 1 for (10, 20)" do
@@ -352,7 +356,7 @@ xdescribe "digit_match" do
     # Act
     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 1
+    # Assert
+    expect(answer).must_equal 1
   end
 end
