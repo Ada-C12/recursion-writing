@@ -8,8 +8,8 @@ def factorial(n)
   return n * factorial(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse(s)
   return s if s.size <= 1
   new_string = reverse(s[1..-1])
@@ -17,8 +17,8 @@ def reverse(s)
   return new_string
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse_inplace(s)
   return s if s.size <= 1
   return reverse(s[1..-1]) + s[0]
@@ -31,8 +31,8 @@ def bunny(n)
   return 2 + bunny(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def nested(s)
   return true if s == ""
   return false if s.length.odd?
@@ -40,8 +40,8 @@ def nested(s)
   nested(s[1..-2])
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def search(array, value)
   raise NotImplementedError, "Method not implemented"
 end
@@ -49,7 +49,10 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def is_palindrome(s)
-  raise NotImplementedError, "Method not implemented"
+  return true if s.length <= 1
+  return false if s.length.even?
+  return true if s[0] == s[-1]
+  nested(s[1..-2])
 end
 
 # Time complexity: ?
