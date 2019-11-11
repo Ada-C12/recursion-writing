@@ -170,10 +170,21 @@ describe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
+
+    # Act
+    answer = nested(string)
+
+    # Assert
+    expect(answer).must_equal true
+  end
+
+  it "will return true for a set of one open and one closed parens" do
+    # Arrange
+    string = "()"
 
     # Act
     answer = nested(string)
@@ -216,7 +227,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"

@@ -49,16 +49,40 @@ def bunny(n)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O of n where n is the number of parens in the string (possibly minus one or two)
+# Space complexity: O of n
 def nested(s)
-  raise NotImplementedError, "Method not implemented"
+  if s.length == 0
+    return true
+  elsif s.length == 1
+    return false
+  elsif s.length == 2 && s[0] == ")" || s.length == 2 && s[-1] == "("
+    return false
+  elsif s.length == 2 && s[0] == "(" && s[-1] == ")"
+    return true
+  else
+    s.slice!(0)
+    s.slice!(-1)
+    return nested(s)
+  end
+  return false
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O of n where n is the number of elements in the array
+# Space complexity: O of n
 def search(array, value)
-  raise NotImplementedError, "Method not implemented"
+  if array.length == 0
+    return false
+  elsif
+    # base case
+    array[0] == value
+    return true
+  else
+    # recursive step -- delete the current value at index 0 and then search again
+    array.delete_at(0)
+    return search(array, value)
+  end
+  return false
 end
 
 # Time complexity: ?
