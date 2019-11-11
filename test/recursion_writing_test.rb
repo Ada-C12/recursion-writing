@@ -2,6 +2,7 @@ require 'minitest/autorun'
 require 'minitest/reporters'
 require "minitest/skip_dsl"
 require_relative '../lib/recursive-methods'
+require 'pry'
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
@@ -213,7 +214,7 @@ describe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -263,7 +264,7 @@ xdescribe "search" do
     end      
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
