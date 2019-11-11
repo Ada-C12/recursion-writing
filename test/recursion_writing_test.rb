@@ -3,6 +3,9 @@ require 'minitest/reporters'
 require "minitest/skip_dsl"
 require_relative '../lib/recursive-methods'
 
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
+
 describe "factorial" do
   it "will find the factorial of 0" do
     # Arrange
@@ -38,7 +41,7 @@ describe "factorial" do
   end
 end
 
-xdescribe "reverse" do
+describe "reverse" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
@@ -84,7 +87,7 @@ xdescribe "reverse" do
 end
 
 
-xdescribe "reverse_in_place" do
+describe "reverse_in_place" do
   it "will reverse 'cat'" do
     # Arrange
     string = "cat"
@@ -129,7 +132,7 @@ xdescribe "reverse_in_place" do
   end
 end
 
-xdescribe "bunny" do
+describe "bunny" do
   it "returns 0 for 0 bunnies" do
     # Arrange
     count = 0
@@ -164,7 +167,7 @@ xdescribe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
