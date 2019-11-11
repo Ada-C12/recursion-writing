@@ -1,17 +1,7 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: O of n because the program must as many operations as n. 
-# Space complexity: O of n because a new line is placed on the stack for operation
-
-# def factorial(n)
-#   # base case
-#   if n == 1
-#     return 1
-#     # recursive step
-#   else
-#     return n * factorial(n-1)
-#   end
-# end
+# Time complexity: O of n because the program must perform as many operations as n. 
+# Space complexity: O of n because a new function is placed on the stack for each operation
 
 def factorial(n)
   if n < 0
@@ -23,17 +13,28 @@ def factorial(n)
   end
 end
 
-
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O of n where n is the length of the string.
+# Space complexity: O of n.
 def reverse(s)
-  raise NotImplementedError, "Method not implemented"
+  # nil case and base case
+  if s.length == 0 || s.length == 1
+    return s
+  else 
+    # recursive step
+    return s[-1] + reverse(s[1..-2]) + s[0]
+  end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O of n where n is the length of the string.
+# Space complexity: O of n.
 def reverse_inplace(s)
-  raise NotImplementedError, "Method not implemented"
+  # nil case and base case
+  if s.length == 0 || s.length == 1
+    return s
+  else 
+    # recursive step
+    return s[-1] + reverse(s[1..-2]) + s[0]
+  end
 end
 
 # Time complexity: ?
