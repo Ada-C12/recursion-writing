@@ -26,8 +26,8 @@ def reverse(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n), similar to the reverse(s) method
+# Space complexity: O(n), also similar to the reverse(s) method
 def reverse_inplace(s, index = 1)
   if index <= s.length/2
     first_char = s[index-1]
@@ -90,15 +90,15 @@ def is_palindrome(s, i = 1)
     end
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n), where n is the number of digits in 'n' or 'm', whichever is smaller.
+# Space complexity: O(n), same as above.
 def digit_match(n, m, i = 0, result = 0)
-  dec = 10**i
+  place = 10**i
   if n == 0 && m == 0
     return 1
   end
-  if n - dec >= 0 && m - dec >= 0
-    if n/dec % 10 == m/dec % 10
+  if n - place >= 0 && m - place >= 0
+    if n/place % 10 == m/place % 10
       result += 1
     end
     digit_match(n, m, i += 1, result)
