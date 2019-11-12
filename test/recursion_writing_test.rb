@@ -86,50 +86,50 @@ describe "reverse" do
 end
 
 
-# xdescribe "reverse_in_place" do
-#   it "will reverse 'cat'" do
-#     # Arrange
-#     string = "cat"
+describe "reverse_in_place" do
+  it "will reverse 'cat'" do
+    # Arrange
+    string = "cat"
 
-#     # Act
-#     answer = reverse_inplace(string)
+    # Act
+    answer = reverse_inplace(string)
 
-#     # Assert
-#     expect(answer).must_equal "tac"
-#   end
+    # Assert
+    expect(answer).must_equal "tac"
+  end
 
-#   it "will reverse 'a'" do
-#     # Arrange
-#     string = "a"
+  it "will reverse 'a'" do
+    # Arrange
+    string = "a"
 
-#     # Act
-#     answer = reverse_inplace(string)
+    # Act
+    answer = reverse_inplace(string)
 
-#     # Assert
-#     expect(answer).must_equal "a"
-#   end
+    # Assert
+    expect(answer).must_equal "a"
+  end
 
-#   it "will reverse empty string " do
-#     # Arrange
-#     string = ""
+  it "will reverse empty string " do
+    # Arrange
+    string = ""
 
-#     # Act
-#     answer = reverse_inplace(string)
+    # Act
+    answer = reverse_inplace(string)
 
-#     # Assert
-#     expect(answer).must_equal ""
-#   end
-#   it "will reverse 'apple'" do
-#     # Arrange
-#     string = "apple"
+    # Assert
+    expect(answer).must_equal ""
+  end
+  it "will reverse 'apple'" do
+    # Arrange
+    string = "apple"
 
-#     # Act
-#     answer = reverse_inplace(string)
+    # Act
+    answer = reverse_inplace(string)
 
-#     # Assert
-#     expect(answer).must_equal "elppa"
-#   end
-# end
+    # Assert
+    expect(answer).must_equal "elppa"
+  end
+end
 
 # xdescribe "bunny" do
 #   it "returns 0 for 0 bunnies" do

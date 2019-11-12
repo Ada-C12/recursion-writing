@@ -1,5 +1,5 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
-
+require "pry"
 # Time complexity: O(n)
 # Space complexity: O(n)
 def factorial(n)
@@ -26,27 +26,32 @@ def reverse(s)
   return last + reverse(rest)
 end
 
-# i = 0
-
-# mid = s.length/2.to_i
-# while i < mid
-#   a = s[i]
-#   s[i] = s[s.length - 1 - i]
-#   s[s.length - 1 - i] = a 
-#   i += 1 
-# end 
-
-# Time complexity: ?
-# Space complexity: ?
-def reverse_inplace(s)
-  
+# Time complexity: O(n)
+# Space complexity: O(n)
+def reverse_inplace(string)
+  return _reverse(string, 0, string.length - 1)
 end
+
+def _reverse(string, i, j)
+  if j - i <= 0
+    return string
+  else
+    swap(string, i, j)
+    return _reverse(string, i += 1, j -=1)
+  end 
+end 
+
+def swap(string, i, j)
+  a = string[i]
+  string[i] = string[j]
+  string[j] = a
+end 
 
 # Time complexity: ?
 # Space complexity: ?
 def bunny(n)
   if n <= 1
-    return  n* 2
+    return  n * 2
   else
     return 2 + bunny(n - 1)
   end 
