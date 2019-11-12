@@ -26,31 +26,32 @@ def reverse(s)
   
 end
 
-# Time complexity: O(n)
-# Space complexity: O(1)
+# Time complexity: O(???)
+# Space complexity: O(???)
 def reverse_inplace(s)
   #  accepts a string as a parameter and then reverses the string IN PLACE using a recursive algorithm.
-  
-  ### I'M NOT SURE IF I'M ALLOWED TO SOLVE THE PROBLEM THIS WAY...
   left_index = 0
   right_index = s.length - 1
   
-  while left_index < right_index
-    s = swap(s, left_index, right_index)
-    left_index += 1
-    right_index -= 1
-  end
+  swap(s, left_index, right_index)
   
   return s
 end
 
-# helper method, which will be called as a recursive function
+# recursive fcn to be used inside reverse_inplace()
 def swap(s, left_index, right_index)
-  temp = s[left_index] 
-  s[left_index] = s[right_index]
-  s[right_index] = temp
-  return s
+  if left_index >= right_index
+    return 
+  else
+    temp = s[left_index] 
+    s[left_index] = s[right_index]
+    s[right_index] = temp
+    left_index += 1
+    right_index -= 1
+    swap(s, left_index, right_index)
+  end
 end
+
 
 # Time complexity: O(n)
 # Space complexity: O(n)
