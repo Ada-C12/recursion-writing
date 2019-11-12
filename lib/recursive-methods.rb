@@ -91,7 +91,7 @@ def is_palindrome(s, low = 0, high = (s.length - 1))
   end
 end
 
-# Time complexity: O(log n) because the function will be called log n times where n is the number of digits in the shorter number. 
+# Time complexity: O(log n) because the function will be called log n times where n is the number of digits in the shorter number.
 # Space complexity: O(log n) because there will be log n number of function calls placed on the system call stack where n is the number of digits in the shorter number.
 def digit_match(n, m, place = 10, match_counter = 0)
   if n == m && n == 0
