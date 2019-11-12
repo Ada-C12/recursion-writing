@@ -59,9 +59,15 @@ end
 
 # Time complexity: ?
 # Space complexity: ?
-def nested(s)
+
+def nested(string)
+
   
 end
+
+def open_parenthesis?(string, i, j)
+  
+end 
 
 # Time complexity: ?
 # Space complexity: ?

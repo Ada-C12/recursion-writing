@@ -131,86 +131,86 @@ describe "reverse_in_place" do
   end
 end
 
-# xdescribe "bunny" do
-#   it "returns 0 for 0 bunnies" do
-#     # Arrange
-#     count = 0
+describe "bunny" do
+  it "returns 0 for 0 bunnies" do
+    # Arrange
+    count = 0
 
-#     # Act
-#     answer = bunny(count)
+    # Act
+    answer = bunny(count)
 
-#     # Assert
-#     expect(answer).must_equal 0
-#   end
+    # Assert
+    expect(answer).must_equal 0
+  end
 
-#   it "returns 2 for 1 bunny" do
-#     # Arrange
-#     count = 1
+  it "returns 2 for 1 bunny" do
+    # Arrange
+    count = 1
 
-#     # Act
-#     answer = bunny(count)
+    # Act
+    answer = bunny(count)
 
-#     # Assert
-#     expect(answer).must_equal 2
-#   end
+    # Assert
+    expect(answer).must_equal 2
+  end
 
-#   it "returns 100 for 50 bunnies" do
-#     # Arrange
-#     count = 50
+  it "returns 100 for 50 bunnies" do
+    # Arrange
+    count = 50
 
-#     # Act
-#     answer = bunny(count)
+    # Act
+    answer = bunny(count)
 
-#     # Assert
-#     expect(answer).must_equal 100
-#   end
-# end
+    # Assert
+    expect(answer).must_equal 100
+  end
+end
 
-# xdescribe "nested" do
-#   it "will return true for empystring" do
-#     # Arrange
-#     string = ""
+describe "nested" do
+  it "will return true for empystring" do
+    # Arrange
+    string = ""
 
-#     # Act
-#     answer = nested(string)
+    # Act
+    answer = nested(string)
 
-#     # Assert
-#     expect(answer).must_equal true
-#   end
+    # Assert
+    expect(answer).must_equal true
+  end
 
-#   it "will return true for a nested series of parens" do
-#     # Arrange
-#     string = "((()))"
+  it "will return true for a nested series of parens" do
+    # Arrange
+    string = "((()))"
 
-#     # Act
-#     answer = nested(string)
+    # Act
+    answer = nested(string)
 
-#     # Assert
-#     expect(answer).must_equal true
-#   end
+    # Assert
+    expect(answer).must_equal true
+  end
 
-#   it "will return false for a nested series of parens" do
-#     # Arrange
-#     string = "(()))"
+  it "will return false for a nested series of parens" do
+    # Arrange
+    string = "(()))"
 
-#     # Act
-#     answer = nested(string)
+    # Act
+    answer = nested(string)
 
-#     # Assert
-#     expect(answer).must_equal false
-#   end
+    # Assert
+    expect(answer).must_equal false
+  end
 
-#   it "will return false for an even length improperly nested series of parens" do
-#     # Arrange
-#     string = "(())))"
+  it "will return false for an even length improperly nested series of parens" do
+    # Arrange
+    string = "(())))"
 
-#     # Act
-#     answer = nested(string)
+    # Act
+    answer = nested(string)
 
-#     # Assert
-#     expect(answer).must_equal false
-#   end
-# end
+    # Assert
+    expect(answer).must_equal false
+  end
+end
 
 # xdescribe "search" do
 #   it "will return false for empty array" do
