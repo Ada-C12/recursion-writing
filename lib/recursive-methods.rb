@@ -68,14 +68,8 @@ def is_palindrome(s)
   return is_palindrome(next_string)
 end
 
-# Time complexity: ?
-# Space complexity: ?
-# 1072503891 and 
-#   62530841
-# ..x!!xx!x!  
-
-# 10725
-#   625
+# Time complexity: O(n^2) since it uses .length in each loop?
+# Space complexity: O(n)
 def digit_match(n, m)
   n = n.to_s
   m = m.to_s
