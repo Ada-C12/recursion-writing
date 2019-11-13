@@ -36,11 +36,16 @@ def bunny(n)
   return 2 + bunny(n-1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
-# def nested(s)
-#   raise NotImplementedError, "Method not implemented"
-# end
+# Time complexity: O(n)
+# Space complexity: O(n)
+def nested(s, i = 0)
+  string = s.split("()")
+  return false if s.length.odd?
+  return true if s.empty? 
+  
+  return true if s.length.even? && string[i].length == string[i + 1].length
+  return false if s.length.even? && string[i].length != string[i + 1].length
+end
 
 # Time complexity: O(n)
 # Space complexity: O(n)
