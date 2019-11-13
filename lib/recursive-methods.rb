@@ -36,7 +36,7 @@ def reverse_inplace(s)
 end
 
 # Time complexity: O(n)
-# Space complexity: O(1)
+# Space complexity: O(n)
 def bunny(n)
   raise ArgumentError if n < 0
   return 0 if n == 0
@@ -56,8 +56,8 @@ def nested(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) - worst case
+# Space complexity: O(n) - worst case
 def search(array, value)
   return false if array[0] == nil
   
@@ -66,8 +66,8 @@ def search(array, value)
   search(array[1..-1], value)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n/2) => O(n)
+# Space complexity: O(n/2) => O(n)
 def is_palindrome(s)
   return true if s.length <=1
   
@@ -78,16 +78,26 @@ def is_palindrome(s)
   end
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n) n is the length of the shortest array
+# Space complexity: O(n)
 def digit_match(n, m)
-  return matches if m[] == nil
-  n = n.to_s.split("")
-  m = m.to_s.split("")
-  
-  if n[-1] == =
-    
-    
+  if n.class == Integer
+    n = n.to_s.split("")   # [1, 0, 7, 2, 5, 0, 3, 8, 9, 1]
   end
   
-  p digit_match(1072503891,62530841) # 4
+  if m.class == Integer 
+    m = m.to_s.split("")   #       [6, 2, 5, 3 ,0, 8, 4, 1]
+  end
+  
+  return n.length if n[-1] == nil || n[-1] == "match" 
+  
+  return m.length if m[-1] == nil || m[-1] == "match"
+  
+  if n[-1] == m[-1]
+    n.insert(0, "match")
+    m.insert(0, "match")
+  end
+  
+  digit_match(n[0..-2], m[0..-2])
+  
+end
