@@ -8,13 +8,13 @@ def factorial(n)
   return n * factorial(n-1)
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def reverse(s)
   return s if s.length <= 1 
   rev_s = reverse(s[1..-1])
   rev_s += s[0]
-  rev_s
+  return rev_s
 end
 
 # Time complexity: O(n)
@@ -43,8 +43,8 @@ def nested(s, i = 0)
   return false if s.length.odd?
   return true if s.empty? 
   
-  return true if s.length.even? && string[i].length == string[i + 1].length
-  return false if s.length.even? && string[i].length != string[i + 1].length
+  return true if s.length.even? && string[i].length == string[i+1].length
+  return false if s.length.even? && string[i].length != string[i+1].length
 end
 
 # Time complexity: O(n)
@@ -55,16 +55,18 @@ def search(array, value, index = 0)
   return search(array, value, index + 1)
 end 
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def is_palindrome(s)
-  return true if s.empty?
+  return true if s.length <= 1
   return false if s[0] != s[-1]
   return is_palindrome(s[1...-1])
 end
 
-# Time complexity: ?
-# Space complexity: ?
-# def digit_match(n, m)
-#   raise NotImplementedError, "Method not implemented"
-# end
+# Time complexity: O(n)
+# Space complexity: O(n)
+def digit_match(n, m)
+  return 1 if n == 0 && m == 0
+  return 0 if n == 0 || m == 0
+  return 1 if n.to_s[-1] == m.to_s[-1]
+end
