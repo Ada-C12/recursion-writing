@@ -1,7 +1,7 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def factorial(n)
   return 1 if n == 0
   raise ArgumentError if n < 0
@@ -9,8 +9,8 @@ def factorial(n)
   return n * factorial(n - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def reverse(s)
   return reverse_recursive(s, reversed_string = "", index = -1)
 end
@@ -21,8 +21,8 @@ def reverse_recursive(s, reversed_string, index)
   return reverse_recursive(s, reversed_string, index - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def reverse_inplace(s)
   return reverse_inplace_recursive(s, last = s.length - 1, index = 0)
 end
@@ -35,24 +35,24 @@ def reverse_inplace_recursive(s, last, index)
   reverse_inplace_recursive(s, last - 1, index + 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def bunny(n)
   return 0 if n <= 0
   return 2 if n == 1
   return 2 + bunny(n - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def nested(s)
   return true if s.empty?
   return false if s[0] != "(" || s[-1] != ")"
   return nested(s[1...-1])
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def search(array, value)
   return search_recursive(array, value, 0)
 end
@@ -64,8 +64,8 @@ def search_recursive(array, value, index)
   return search_recursive(array, value, index + 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def is_palindrome(s)
   return true if s.empty?
   return false if s[0] != s[-1]
@@ -73,8 +73,8 @@ def is_palindrome(s)
   return is_palindrome(s[1...-1])
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: o(n)
+# Space complexity: o(n)
 def digit_match(n, m)
   if n.digits.length > m.digits.length
     return digit_match_recursive(n.digits, m.digits, num_of_pairs = 0, index = 0)
