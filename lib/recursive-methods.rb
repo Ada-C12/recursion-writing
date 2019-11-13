@@ -94,8 +94,8 @@ end
 
 
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n + m)
+# Space complexity: O(1)
 
 def digit_match(n, m, c = 0)
   if n.class != String || m.class != String
