@@ -70,14 +70,22 @@ end
 
 # Time complexity: ?
 # Space complexity: ?
+# 1072503891 and 
+#   62530841
+# ..x!!xx!x!  
+
+# 10725
+#   625
 def digit_match(n, m)
   n = n.to_s
   m = m.to_s
-  return 0 if n == nil || m == nil
+  return 0 if n == nil || m == nil || n.length == 0 || m.length == 0
   match = n[-1] == m[-1]
-  if match && n.length == 1
-    return 1
-  elsif n.length <= 1 || m.length <= 1 # || n == nil || m == nil
+  if match && (n.length == 1 || m.length == 1)
+    return 1 
+  elsif !match && (n.length == 1 || m.length == 1)
+    return 0
+  elsif !match
     return 0 + digit_match(n[0..-2].to_i, m[0..-2].to_i)
   else
     return 1 + digit_match(n[0..-2].to_i, m[0..-2].to_i)
