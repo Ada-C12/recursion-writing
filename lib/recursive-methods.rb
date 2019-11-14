@@ -47,39 +47,72 @@ def swap(string, i, j)
   string[j] = a
 end 
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def bunny(n)
-  if n <= 1
-    return  n * 2
+  if n == 0
+    return 0
+  elsif n == 1
+    return 2 
   else
-    return 2 + bunny(n - 1)
+    2 + bunny(n - 1)
   end 
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 
 def nested(string)
-
-  
+  if string.length % 2 != 0
+    return false
+  else 
+    recursion(string, 0, string.length - 1)
+  end 
 end
 
-def open_parenthesis?(string, i, j)
-  
+def recursion(string, start_index, end_index)
+  if start_index > end_index
+    return true
+  elsif string[start_index] == "(" && string[end_index] == ")"
+    return recursion(string, start_index + 1, end_index - 1)
+  else
+    return false
+  end 
 end 
 
 # Time complexity: ?
 # Space complexity: ?
 def search(array, value)
-    raise NotImplementedError, "Method not implemented"
+  if array == []
+    return false
+  else
+    return search_helper(array, value, i)
+  end 
 end
 
-# Time complexity: ?
-# Space complexity: ?
+def search_helper(array, value, i)
+  if array[i] == value
+    return true 
+  else
+    recursion(array, value, i += 1)
+  end 
+end 
+
+# Time complexity: O(n)
+# Space complexity: O(n)
 def is_palindrome(s)
-    raise NotImplementedError, "Method not implemented"
+  return is_palindrome(s, 0, s.length - 1 )
 end
+
+def is_palindrome(s, start_index, end_index)
+  if start_index < end_index
+    return true
+  elsif s[0] != s[s.length - 1]
+    return false
+  else
+    is_palindrome(s, start_index + 1, end_index - 1)
+  end 
+end 
 
 # Time complexity: ?
 # Space complexity: ?
