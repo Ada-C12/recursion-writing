@@ -50,8 +50,17 @@ end
 
 # Time complexity: ?
 # Space complexity: ?
-def nested(s)
-  raise NotImplementedError, "Method not implemented"
+def nested(s, first = 0, last = s.length - 1)
+  if first >= last  
+   return true
+  end
+
+  if s[first] == s[last] || s.length % 2 == 1
+    return false
+  end
+
+  #this is the inside of the loop
+  return nested(s, first + 1, last - 1)
 end
 
 # Time complexity: ?
@@ -62,7 +71,7 @@ end
 
 # Time complexity: O(n)
 # Space complexity: O(n)
-def is_palindrome(string, length = 0, first = 0)
+def is_palindrome(string, length = 0, letter = 0, hash = {}, results = [])
   if string == ""
     return true
   end
@@ -74,20 +83,20 @@ def is_palindrome(string, length = 0, first = 0)
       return true
     end
   end
-  
+
   hash = {}
   results = []
 
-  if string[first] == nil
-    hash[first] = 0
+  if string[letter] == nil
+    hash[letter] = 0
   else
-    hash[first] += 1
+    hash[letter] += 1
   end
 
-  if hash[first] % 2 != 0
-    results << hash[first]
+  if hash[letter] % 2 != 0
+    results << hash[letter]
   end
-  is_palindrome(string, length + 1, first + 1)
+  is_palindrome(string, length + 1, letter + 1, hash, results)
 end
 
 # Time complexity: ?
