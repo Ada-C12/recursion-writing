@@ -1,7 +1,7 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def factorial(n)
   if n < 0 
     raise ArgumentError
@@ -49,10 +49,19 @@ def bunny(n, ears = 0)
   end 
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def nested(s)
-    raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n)
+# Space complexity: O(n)
+def nested(s, low = 0, high = (s.length - 1))
+  if s.length.odd?
+    return false 
+  elsif low < high 
+    if s[low] != "(" && s[high] != ")"
+      return false 
+    end 
+    return nested(s, low + 1, high - 1)
+  else 
+    return true 
+  end 
 end
 
 # Time complexity: O(n)
@@ -87,5 +96,5 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def digit_match(n, m)
-    raise NotImplementedError, "Method not implemented"
+
 end
