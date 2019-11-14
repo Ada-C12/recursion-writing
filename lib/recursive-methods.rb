@@ -3,7 +3,10 @@
 # Time complexity: ?
 # Space complexity: ?
 def factorial(n)
-    raise NotImplementedError, "Method not implemented"
+  if n == 0 || n == 1
+    return 1
+  end
+    return n * factorial(n-1) if n > 1
 end
 
 # Time complexity: ?
