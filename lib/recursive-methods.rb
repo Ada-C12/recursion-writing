@@ -12,13 +12,6 @@ end
 
 # Time complexity: O(n)
 # Space complexity: O(1)
-# def reverse_t(string)
-#   reversed_str = ""
-#   string.each_char do |letter|
-#     puts reversed_str = letter + reversed_str
-#   end
-#   reversed_str
-# end
 
 def reverse(string, rev = "", first = 0)
   if rev.length == string.length
@@ -48,8 +41,11 @@ end
 
 # Time complexity: ?
 # Space complexity: ?
+
+#I want to add n to itself,but I don't now what my base case would be
 def bunny(n)
-  raise NotImplementedError, "Method not implemented"
+  return ears = (n + n)
+  bunny(n)
 end
 
 # Time complexity: ?
@@ -67,6 +63,10 @@ end
 # Time complexity: O(n)
 # Space complexity: O(n)
 def is_palindrome(string, length = 0, first = 0)
+  if string == ""
+    return true
+  end
+
   if string.length == length
     if results.length > 1
       return false
@@ -74,18 +74,20 @@ def is_palindrome(string, length = 0, first = 0)
       return true
     end
   end
+  
   hash = {}
   results = []
+
   if string[first] == nil
-      hash[first] = 0
+    hash[first] = 0
   else
-      hash[first] += 1
+    hash[first] += 1
   end
 
   if hash[first] % 2 != 0
-      results << hash[first]
+    results << hash[first]
   end
-    is_palindrome(string, length + 1, first + 1 )
+  is_palindrome(string, length + 1, first + 1)
 end
 
 # Time complexity: ?
