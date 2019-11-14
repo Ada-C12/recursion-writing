@@ -10,14 +10,26 @@ def factorial(n)
   return n * factorial(n - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def reverse(s)
-  raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n)
+# Space complexity: O(1)
+# def reverse_t(string)
+#   reversed_str = ""
+#   string.each_char do |letter|
+#     puts reversed_str = letter + reversed_str
+#   end
+#   reversed_str
+# end
+
+def reverse(string, rev = "", first = 0)
+  if rev.length == string.length
+    return rev
+  end
+  rev = string[first] + rev
+  reverse(string, rev, first + 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(1)
 
 #All the variables that you have to change would go in the parameters.
 def reverse_inplace(s, first = 0, last = s.length - 1)
