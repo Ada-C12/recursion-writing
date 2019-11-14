@@ -39,8 +39,8 @@ def reverse_inplace(s, first = 0, last = s.length - 1)
   return reverse_inplace(s, first + 1, last - 1)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(1)
+# Space complexity: O(1)
 
 #I want to add n to itself,but I don't now what my base case would be
 def bunny(n)
@@ -48,8 +48,8 @@ def bunny(n)
   bunny(n)
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(n)
 def nested(s, first = 0, last = s.length - 1)
   if first >= last  
    return true
