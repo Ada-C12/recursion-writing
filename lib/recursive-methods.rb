@@ -13,8 +13,8 @@ def factorial(n)
   end
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2) b/c line 24 made a new string O(n) * recursing O(n) times
+# Space complexity: O(n^2) b/c line 24 made a new string O(n) * recursing O(n) times
 def reverse(s)
   # accepts a string and returns the reverse of the string by reversing all letters and all words in the string
   # ex: reverse("hello world") will convert the input string to "dlrow olleh"
@@ -26,8 +26,8 @@ def reverse(s)
   
 end
 
-# Time complexity: O(???)
-# Space complexity: O(???)
+# Time complexity: O(n)
+# Space complexity: O(n)
 def reverse_inplace(s)
   #  accepts a string as a parameter and then reverses the string IN PLACE using a recursive algorithm.
   left_index = 0
@@ -69,8 +69,8 @@ def bunny(n)
   end
 end
 
-# Time complexity: O(n)
-# Space complexity: O(1)
+# Time complexity: O(n^2) b/c line 109 is O(n) for making new array, x O(n) recursive steps
+# Space complexity: O(n^2)?
 def nested(s)
   # puts "\nTESTING ON #{s}"
   
@@ -114,25 +114,52 @@ def nested(s)
   end
 end
 
+### Chris says... 
+# This is only tangentially recursive, you have a lot of nested loop sand if-else blocks.
+
+def nested_Chris_inefficient(s)
+  return true if s.empty?
+  return false unless s[0] == "(" && s[-1] == ")"
+  return nested_Chris_inefficient(s[1..-2])   ### This makes it O(n)*O(n)
+end
+
+def nested_Chris(s, i=0, j=s.length-1)
+  # O(n) time, O(n) space
+  # puts "looking at #{s[i..j]}, i=#{i} and j=#{j}"
+  return false if s.length % 2 == 1
+  
+  while i < j
+    return false unless s[i] == "(" && s[j] == ")"
+    return nested_Chris(s, i+1, j-1)  
+  end
+  
+  return true
+end
+
+# s = "(())"
+# p nested_Chris_inefficient(s)
+# p nested_Chris(s)
+
 # Time complexity: O(n)
-# Space complexity: O(1)
-def search(array, value)
+# Space complexity: O(n)
+def search(array, value, i=0)
   # accepts an unsorted array of integers and an integer value to find and then 
   # returns true if the value if found in the unsorted array and false otherwise. 
   if array.empty?
     return false
   end
-  if array[0] == value
+  if array[i] == value
     return true
+  elsif array[i+1]
+    return search(array, value, i+1)
   else 
-    array.shift
-    return search(array, value)
+    return false
   end
   
 end
 
-# Time complexity: O(n)
-# Space complexity: O(1)
+# Time complexity: O(n^2) b/c O(n) for making new string * O(n) recursive steps
+# Space complexity: O(n^2)
 def is_palindrome(s)
   if (s.length == 0) || (s.length == 1)
     return true
@@ -142,6 +169,20 @@ def is_palindrome(s)
     return false
   end
 end
+
+def is_palindrome_better(s, i=0, j=s.length-1)
+  # O(n) time & space
+  while i < j
+    if s[i] == s[j]
+      return is_palindrome_better(s, i+1, j-1)
+    else
+      return false
+    end
+  end
+  
+  return true
+end
+
 
 # Time complexity: O(n), where n is the longer number
 # Space complexity: O(n)
@@ -164,15 +205,34 @@ def digit_match(n, m)
     else
       return 0
     end
+  end  
+end
+
+### can also treat n and m as strings and iter/compare from index -1
+def digit_match_str(n, m, i = -1)
+  s1 = n.to_s
+  s2 = m.to_s
+  
+  if (!s1[i]) || (!s2[i])
+    return 0
+  else
+    if s1[i] == s2[i]
+      return 1 + digit_match_str(s1,s2,i-1)
+    else
+      return 0 + digit_match_str(s1,s2,i-1)
+    end
   end
   
 end
 
+# n= 123451
+# m = 65431
+# p digit_match_str(n,m)
+
 
 # Added Fun
-# Time complexity: O(n*2^n), almost I think.  
-# It'll go n-1 levels deep, with up to 2^n leaves, so n*2^n...
-# Space complexity: O(n*2^n)...?  not sure
+# Time complexity: O(2^n), 2^n leaves
+# Space complexity: O(n) per Chris
 def fib(n)
   # returns the nth fibonacci number
   # e.g. fib(4) = (0 1 1 2 3) should return 3
