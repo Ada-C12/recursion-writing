@@ -39,22 +39,37 @@ def reverse_inplace(s, index = 0)
   end
   # swap start and end elements
   temp = s[start_index]
-  s[start_index] = s[last_index]
-  s[last_index] = temp
+  s[start_index] = s[end_index]
+  s[end_index] = temp
   
   return reverse_inplace(s, index + 1) # this handles swapping middle
 end
 
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(n)
+# Space complexity: O(1)
 def bunny(n)
-  raise NotImplementedError, "Method not implemented"
+  if n < 0 
+    raise ArgumentError
+  end
+  if n == 0 # basecase
+    return n
+  end
+  return bunny(n - 1) + 2
 end
 
-# Time complexity: ?
-# Space complexity: ?
-def nested(s)
-  raise NotImplementedError, "Method not implemented"
+# Time complexity: O(n)
+# Space complexity: O(1)
+def nested(s, index = 0) # initalize index
+  start_index = index
+  end_index = s.length - 1 - index
+  if end_index < start_index
+    return true
+  end 
+  if s[start_index] == '(' && s[end_index] == ')'
+    return nested(s, index + 1) 
+  else
+    return false
+  end
 end
 
 # Time complexity: ?
