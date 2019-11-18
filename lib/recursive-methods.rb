@@ -17,7 +17,7 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def reverse(s)
-    if s.length == 1
+    if s.length == 1 || s == ""
       return s
     else
       return reverse(s[1..-1]) + s[0]
