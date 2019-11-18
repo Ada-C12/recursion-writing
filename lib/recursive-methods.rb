@@ -27,7 +27,11 @@ end
 # Time complexity: ?
 # Space complexity: ?
 def reverse_inplace(s)
-    raise NotImplementedError, "Method not implemented"
+  if s.length == 1 || s == ""
+    return s
+  else
+    return reverse(s[1..-1]) + s[0]
+  end
 end
 
 # Time complexity: ?
