@@ -5,14 +5,23 @@
 def factorial(n)
   if n == 0 || n == 1
     return 1
+  elsif n < 0
+    raise ArgumentError
   end
-    return n * factorial(n-1) if n > 1
+  return n * factorial(n-1)
+  # return times(n, factorial(n-1))
 end
+
+
 
 # Time complexity: ?
 # Space complexity: ?
 def reverse(s)
-    raise NotImplementedError, "Method not implemented"
+    if s.length == 1
+      return s
+    else
+      return reverse(s[1..-1]) + s[0]
+    end
 end
 
 # Time complexity: ?
