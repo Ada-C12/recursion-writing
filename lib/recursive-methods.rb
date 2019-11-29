@@ -1,15 +1,16 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n), where n is the value of n
+# Space complexity: O(n) - where n is the stack frames 
 def factorial(n)
   raise ArgumentError if n < 0
-  return 1 if n == 1 || n == 0
+  return 1 if n == 0
   return n * factorial(n-1)
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
+# can copy the array to a new array in assembly language; but not in ruby
 def reverse(s)
   return s if s.length <= 1
   return s[(s.length - 1)] + reverse(s[0..(s.length - 2)])
@@ -17,46 +18,53 @@ end
 
 # Time complexity: O(n)
 # Space complexity: O(n)
+def reverse_inplace_helper(s, i, j)
+  return s if i >- j
+
+  temp = s[i]
+  s[i] = s[j]
+  s[j] = temp
+  
+  return reverse_inplace_helper(s, i+1, j-1)
+end
+
 def reverse_inplace(s)
-  return s if s.length <= 1
-  return s[(s.length - 1)] + reverse(s[0..(s.length - 2)])
+  return reverse_inplace_helper(s, 0, s.length - 1)
 end
 
 # Time complexity: O(n)
 # Space complexity: O(n)
 def bunny(n)
-  return nil if n < 0
   return 0 if n == 0
-  return 2 if n == 1
   return 2 + bunny(n - 1)
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def nested(s)
   return true if s.length == 0
   return false if s[0] == s[-1]
   nested(s[1..-2])
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def search(array, value)
   return false if array.length == 0
   return true if array[0] == value
   search(array[1..-1], value)
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def is_palindrome(s)
   return true if s.length <= 1
   return false if s[0] != s[-1]
   is_palindrome(s[1..-2])
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n^2)
+# Space complexity: O(n^2)
 def digit_match(n, m)
   n = n.to_s
   m = m.to_s
