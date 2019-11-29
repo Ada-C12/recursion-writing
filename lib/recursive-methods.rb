@@ -8,12 +8,11 @@ def factorial(n)
   return n * factorial(n-1)
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
-# can copy the array to a new array in assembly language; but not in ruby
+# Time complexity: O(n^2), where n is the length of s - O(n) for recursion & O(n) for creating new array within each recursive call
+# Space complexity: O(n^2), O(n) for stack frames & O(n) for creating new array within each stack frame ("s[0..-2]")
 def reverse(s)
   return s if s.length <= 1
-  return s[(s.length - 1)] + reverse(s[0..(s.length - 2)])
+  return s[-1] + reverse(s[0..-2])
 end
 
 # Time complexity: O(n)
