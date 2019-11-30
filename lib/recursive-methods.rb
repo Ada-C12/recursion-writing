@@ -27,15 +27,15 @@ def reverse_inplace(s, head = 0, tail = s.length-1)
   return reverse_inplace(s, head+1, tail-1)
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
+# Time complexity: O(n), where n is the value of n
+# Space complexity: O(n), where n is the stack frames
 def bunny(n)
   return 0 if n == 0
   return 2 + bunny(n - 1)
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
+# Time complexity: O(n^2), where n is the length of s - O(n) for recursion & O(n) for creating new array within each recursive call
+# Space complexity: O(n^2), O(n) for stack frames & O(n) for creating new array within each stack frame ("s[1..-2]")
 def nested(s)
   return true if s.length == 0
   return false if s[0] == s[-1]
