@@ -42,12 +42,15 @@ def nested(s)
   nested(s[1..-2])
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
-def search(array, value)
-  return false if array.length == 0
-  return true if array[0] == value
-  search(array[1..-1], value)
+# Time complexity: O(n), where n is the length of array
+# Space complexity: O(n), where n is the stack frames
+def search(array, value, index = 0)
+  return false if index == array.length
+
+  if index < array.length
+    return true if array[index] == value
+    return search(array, value, index + 1)
+  end 
 end
 
 # Time complexity: O(n^2)
