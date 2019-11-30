@@ -1,7 +1,7 @@
 # Authoring recursive algorithms. Add comments including time and space complexity for each method.
 
 # Time complexity: O(n), where n is the value of n
-# Space complexity: O(n) - where n is the stack frames 
+# Space complexity: O(n), where n is the stack frames 
 def factorial(n)
   raise ArgumentError if n < 0
   return 1 if n == 0
@@ -15,20 +15,16 @@ def reverse(s)
   return s[-1] + reverse(s[0..-2])
 end
 
-# Time complexity: O(n)
-# Space complexity: O(n)
-def reverse_inplace_helper(s, i, j)
-  return s if i >- j
+# Time complexity: O(n), where n is the length of the string
+# Space complexity: O(n), where n is the stack frames
+def reverse_inplace(s, head = 0, tail = s.length-1)
+  return s if head > tail
 
-  temp = s[i]
-  s[i] = s[j]
-  s[j] = temp
+  temp = s[head]
+  s[head] = s[tail]
+  s[tail] = temp
   
-  return reverse_inplace_helper(s, i+1, j-1)
-end
-
-def reverse_inplace(s)
-  return reverse_inplace_helper(s, 0, s.length - 1)
+  return reverse_inplace(s, head+1, tail-1)
 end
 
 # Time complexity: O(n)
