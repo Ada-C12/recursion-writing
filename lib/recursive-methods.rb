@@ -61,8 +61,8 @@ def is_palindrome(s, head = 0, tail = s.length-1)
   return is_palindrome(s, head+1, tail-1)
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
+# Time complexity: O(n^2), where n is the length of s - O(n) for recursion & O(n) for creating new array within each recursive call
+# Space complexity: O(n^2), O(n) for stack frames & O(n) for creating new array within each stack frame ("s[0..-2]")
 def digit_match(n, m)
   n = n.to_s
   m = m.to_s
