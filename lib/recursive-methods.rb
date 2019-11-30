@@ -53,12 +53,12 @@ def search(array, value, index = 0)
   end 
 end
 
-# Time complexity: O(n^2)
-# Space complexity: O(n^2)
-def is_palindrome(s)
-  return true if s.length <= 1
-  return false if s[0] != s[-1]
-  is_palindrome(s[1..-2])
+# Time complexity: O(n), where n is the length of s
+# Space complexity: O(n), where n is the stack frames
+def is_palindrome(s, head = 0, tail = s.length-1)
+  return true if head >= tail
+  return false if s[head] != s[tail]
+  return is_palindrome(s, head+1, tail-1)
 end
 
 # Time complexity: O(n^2)
