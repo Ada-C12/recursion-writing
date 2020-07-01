@@ -3,6 +3,8 @@ require 'minitest/reporters'
 require "minitest/skip_dsl"
 require_relative '../lib/recursive-methods'
 
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
 describe "factorial" do
   it "will find the factorial of 0" do
     # Arrange
