@@ -24,7 +24,7 @@ end
 
 
 # # # # # Time complexity: O(n)
-# # # # # Space complexity: O(1)
+# # # # # Space complexity: O(n)
 def reverse_inplace(s, pointer = 0)
   
     return s if pointer == s.length / 2
