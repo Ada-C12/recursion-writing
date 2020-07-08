@@ -1,9 +1,9 @@
 require 'minitest/autorun'
-require 'minitest/reporters'
-require "minitest/skip_dsl"
+# require 'minitest/reporters'
+# require "minitest/skip_dsl"
 require_relative '../lib/recursive-methods'
 
-Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+# Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 describe "factorial" do
   it "will find the factorial of 0" do
@@ -131,7 +131,7 @@ describe "reverse_in_place" do
   end
 end
 
-xdescribe "bunny" do
+describe "bunny" do
   it "returns 0 for 0 bunnies" do
     # Arrange
     count = 0
@@ -166,7 +166,7 @@ xdescribe "bunny" do
   end
 end
 
-xdescribe "nested" do
+describe "nested" do
   it "will return true for empystring" do
     # Arrange
     string = ""
@@ -212,7 +212,7 @@ xdescribe "nested" do
   end
 end
 
-xdescribe "search" do
+describe "search" do
   it "will return false for empty array" do
     # Arrange
     item = "a"
@@ -262,7 +262,7 @@ xdescribe "search" do
     end      
 end
 
-xdescribe "is_palindrome" do
+describe "is_palindrome" do
   it "will return true for emptystring" do
     # Arrange
     string = ""
@@ -297,64 +297,64 @@ xdescribe "is_palindrome" do
   end
 end
 
-xdescribe "digit_match" do
-  it "returns 4 for 1072503891 and 62530841" do
-    # Arrange
-    num1 = 1072503891
-    num2 = 62530841
+# xdescribe "digit_match" do
+#   it "returns 4 for 1072503891 and 62530841" do
+#     # Arrange
+#     num1 = 1072503891
+#     num2 = 62530841
 
-    # Act
-    answer = digit_match(num1, num2)
+#     # Act
+#     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 4
-  end
+#      # Assert
+#      expect(answer).must_equal 4
+#   end
 
-  it "returns 0 for nonmatching numbers" do
-    # Arrange
-    num1 = 0
-    num2 = 62530841
+#   it "returns 0 for nonmatching numbers" do
+#     # Arrange
+#     num1 = 0
+#     num2 = 62530841
 
-    # Act
-    answer = digit_match(num1, num2)
+#     # Act
+#     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 0
-  end
+#      # Assert
+#      expect(answer).must_equal 0
+#   end
 
-  it "returns 3 for 841 and 62530841" do
-    # Arrange
-    num1 = 841
-    num2 = 62530841
+#   it "returns 3 for 841 and 62530841" do
+#     # Arrange
+#     num1 = 841
+#     num2 = 62530841
 
-    # Act
-    answer = digit_match(num1, num2)
+#     # Act
+#     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 3
-  end
+#      # Assert
+#      expect(answer).must_equal 3
+#   end
   
-  it "returns 1 for (0, 0)" do
-    # Arrange
-    num1 = 0
-    num2 = 0
+#   it "returns 1 for (0, 0)" do
+#     # Arrange
+#     num1 = 0
+#     num2 = 0
 
-    # Act
-    answer = digit_match(num1, num2)
+#     # Act
+#     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 1
-  end
+#      # Assert
+#      expect(answer).must_equal 1
+#   end
   
-  it "returns 1 for (10, 20)" do
-    # Arrange
-    num1 = 10
-    num2 = 20
+#   it "returns 1 for (10, 20)" do
+#     # Arrange
+#     num1 = 10
+#     num2 = 20
 
-    # Act
-    answer = digit_match(num1, num2)
+#     # Act
+#     answer = digit_match(num1, num2)
 
-     # Assert
-     expect(answer).must_equal 1
-  end
-end
+#      # Assert
+#      expect(answer).must_equal 1
+#   end
+# end
